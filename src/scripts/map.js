@@ -44,3 +44,28 @@ function tileTypeHasTransparency(checkTileType) { //things we need transparent !
 			checkTileType == TILE_DOOR);
 }
 
+
+function drawWorld() {
+
+	var arrayIndex = 0;
+	var drawTileX = 0;
+	var drawTileY = 0;
+	for(var eachRow=0;eachRow<WORLD_ROWS;eachRow++) {
+		for(var eachCol=0;eachCol<WORLD_COLS;eachCol++) {
+
+			var arrayIndex = rowColToArrayIndex(eachCol, eachRow); 
+			var tileKindHere = worldGrid[arrayIndex];
+			var useImg = worldPics[tileKindHere];
+
+			if( tileTypeHasTransparency(tileKindHere) ) {
+				canvasContext.drawImage(worldPics[TILE_GROUND],drawTileX,drawTileY);
+			}
+			canvasContext.drawImage(useImg,drawTileX,drawTileY);
+			drawTileX += WORLD_W;
+			arrayIndex++;
+		} // end of for each col
+		drawTileY += WORLD_H;
+		drawTileX = 0;
+	} // end of for each row
+
+} // end of drawWorld func
