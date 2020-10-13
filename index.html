@@ -1,16 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./dist/main.css" />
-    <title>Document</title>
-  </head>
+<html lang="en" dir="ltr">
 
-  <body>
-    <button id="canvas-demo">Canvas Demo</button>
-    <button id="DOM-demo">DOM Demo</button>
-    <script src="./dist/main.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Luka's & Chupa's Adventures!</title>
+
+  <script type="text/javascript" src="./lib/bundle.js"></script>
+</head>
+
+<body>
+  <h1>Luka & Chupa's Adventures</h1>
+
+  <div class="LC-container">
+
+
+    <canvas id="LC-game"></canvas>
+        <div id="instructionsPanel" class="modalPanel hidden">
+          <h2> Guide to Play </h2>
+          <hr />
+          <p> "The Adventure's of Luka and Chupa!"" is game inspired by two Corgis - Luka & Chupa (shocking !).
+            The goal of the game is to direct Luka using the arrow key to achieve the dog treats he needs in order to break through the cage holding his brother Chupa.</p>
+        
+          <p>
+            The treats are locating in various destinations on the map, it is your job to hurdle over any obstacle that prevents you from grabbing the treats </p>
+          <p>
+            The levels increase in difficulty after every successful mission </p>
+        
+
+        </div>
+
+    <div class="instructions">
+      <h2>Controls</h2>
+      <ul class="controls">
+        <li>Up Arrow: Move Up</li>
+        <li>Down Arrow: Move Down</li>
+        <li>Right Arrow: Move Right</li>
+        <li>Left Arrow: Move Left</li>
+      </ul>
+      <h2>Hints:</h2>
+      <ul>
+        <li>Fire will only spell out DOOM !</li>
+        <li>Don't fall !</li>
+        <li>Goodluck ?</li>
+      </ul>
+      <p>
+      </p>
+    </div>
+  </div>
+
+
+
+</body>
+
 </html>

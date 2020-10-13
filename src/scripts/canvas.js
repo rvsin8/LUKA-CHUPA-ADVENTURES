@@ -1,12 +1,14 @@
 class canvasExample {
   constructor(props) {
     this.coords = [10, 10, 150, 100];
-    this.animationDir = 1;
-    this.fillColor = `green`;
+    //this.animationDir = 1;
+    this.fillColor = `black`;
     this.canvas = document.createElement("canvas");
     this.canvas.width = window.innerWidth * 0.75;
     this.canvas.height = this.canvas.width / 2;
     this.ctx = this.canvas.getContext("2d");
+
+
   }
   createCanvas() {
     document.body.append(this.canvas);
@@ -32,7 +34,7 @@ class canvasExample {
   setColor(color) {
     this.fillColor = color;
     document.body.style.backgroundColor = color;
-    document.body.style.filter = `brightness(150%)`;
+    //document.body.style.filter = `brightness(150%)`;
   }
 }
 
