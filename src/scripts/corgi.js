@@ -42,8 +42,13 @@ function corgiClass() {
     console.log("NO PLAYER START FOUND!");
   }; // end of corgiReset func
 
+  	this.updateSnackReadout = function () { // lets us know how many snacks are left
+      document.getElementById("debugText").innerHTML = "Keys: " + this.keysHeld;
+    };
 
-  this.move = function () { //*test this as well - consistent speed is key
+
+
+  this.move = function () { //*test this as well - consistent speed is key with snack
     var nextX = this.x;
     var nextY = this.y;
 
@@ -60,4 +65,38 @@ function corgiClass() {
       nextX -= PLAYER_MOVE_SPEED;
     }
   }
+
+  var walkIntoTileIndex = getTileIndexAtPixelCoord(nextX, nextY);
+		var walkIntoTileType = TILE_WALL;
+
+		if(walkIntoTileIndex != undefined) {
+			walkIntoTileType = worldGrid[walkIntoTileIndex];
+		}
+
+		switch (walkIntoTileType) {
+      case TILE_GROUND: //advance once its a reg tile
+        this.x = nextX;
+        this.y = nextY;
+        break;
+      case TILE_CHUPA: // win once you hit chupa
+        console.log(this.name + " WINS!");
+        loadLevel(levelOne);
+        break;
+      case TILE_DOOR: //if you have enough snacks break the door down
+        if (this.keysHeld > 0) {
+          this.keysHeld--; // one less snack
+          this.updateSnackReadout(); //how mna
+          worldGrid[walkIntoTileIndex] = TILE_GROUND;
+        }
+        break;
+      case TILE_SNACKS:
+        this.keysHeld++; // one more snack, remove the snack and put ground there
+        this.updateSnackReadout();
+        worldGrid[walkIntoTileIndex] = TILE_GROUND;
+        break;
+      case TILE_WALL:
+      default:
+        break;
+    }
 }
+

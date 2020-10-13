@@ -9,13 +9,24 @@
 </head>
 
 <body>
-  <h1>Luka & Chupa's Adventures</h1>
+  <h1>Adventure's of Luka & Chupa !</h1>
 
   <div class="LC-container">
 
 
-    <canvas id="LC-game"></canvas>
-        <div id="instructionsPanel" class="modalPanel hidden">
+   <canvas id="gameCanvas" width="800" height="600"></canvas>
+      <p id="debugText">Snack count will be displayed here</p>
+      
+      <script src="../js_project_skeleton/src/scripts/graphics.js"></script>
+      <script src="../js_project_skeleton/src/scripts/corgi.js"></script>
+      <script src="../js_project_skeleton/src/scripts/map.js"></script>
+      <script src="../js_project_skeleton/src/scripts/user.js"></script>
+      <script src="../js_project_skeleton/src/scripts/game.js"></script>
+      
+      </body>
+    </canvas>
+        
+  <div id="instructionsPanel" class="modalPanel hidden">
           <h2> Guide to Play </h2>
           <hr />
           <p> "The Adventure's of Luka and Chupa!"" is game inspired by two Corgis - Luka & Chupa (shocking !).
@@ -27,7 +38,7 @@
             The levels increase in difficulty after every successful mission </p>
         
 
-        </div>
+  </div>
 
     <div class="instructions">
       <h2>Controls</h2>
