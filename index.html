@@ -6,56 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
-    <title>Document</title>
+
   </head>
 
-<body>
-  <h1>Adventure's of Luka & Chupa !</h1>
-  <canvas id="gameCanvas" width="800" height="600"></canvas>
-  <p id="debugText">Snacks count will be displayed here</p>
+  <div className="ok">
+  <body>
+    <div className="nav">
+                  <img src="src/images/luka.jpg" className="splash-picture-1"></script>
+    </div>
+     <div class="high-scores-container">
+        <h2>Instructions</h2>
+          <li>Use the arrow keys to move Luka around</li>
+          <li>Find your way through the maze by opening doors</li>
+          <li>Each door can be opened with a certain about of Luka Snacks</li>
+          <li>Get to Chupa to Win!</li>
+      </div>
 
-  <script src="../js_project_skeleton/src/scripts/corgi.js"></script>
-  <script src="../js_project_skeleton/src/scripts/map.js"></script>
-  <script src="../js_project_skeleton/src/scripts/user.js"></script>
-  <script src="../js_project_skeleton/src/index.js"></script>
+      <div className="lc">
+              <canvas id="game"></canvas>
 
-</body>
-        
-  <div id="instructionsPanel" class="modalPanel hidden">
-          <h2> Guide to Play </h2>
-          <hr />
-          <p> "The Adventure's of Luka and Chupa!"" is game inspired by two Corgis - Luka & Chupa (shocking !).
-            The goal of the game is to direct Luka using the arrow key to achieve the dog treats he needs in order to break through the cage holding his brother Chupa.</p>
-        
-          <p>
-            The treats are locating in various destinations on the map, it is your job to hurdle over any obstacle that prevents you from grabbing the treats </p>
-          <p>
-            The levels increase in difficulty after every successful mission </p>
-        
+      </div>
+  
 
-  </div>
-
-    <div class="instructions">
-      <h2>Controls</h2>
-      <ul class="controls">
-        <li>Up Arrow: Move Up</li>
-        <li>Down Arrow: Move Down</li>
-        <li>Right Arrow: Move Right</li>
-        <li>Left Arrow: Move Left</li>
-      </ul>
-      <h2>Hints:</h2>
-      <ul>
-        <li>Fire will only spell out DOOM !</li>
-        <li>Don't fall !</li>
-        <li>Goodluck ?</li>
-      </ul>
-      <p>
-      </p>
+      </div>
+  
+      <div class="controls">
+        <h2>Controls</h2>
+        <ul class="arrows"></ul>
+          <li>Up: Move Up</li>
+          <li>Left: Move Left</li>
+          <li>Right: Move Right</li>
+          <li>Down: Move Down</li>
+        </ul>
+      </div>
     </div>
   </div>
-
-
-
-</body>
-
-</html>
+    <script src="./dist/main.js"></script>
+  
+  
+  </body>
+  
+  </html>

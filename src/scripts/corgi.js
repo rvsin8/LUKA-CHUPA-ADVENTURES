@@ -1,6 +1,7 @@
 const PLAYER_MOVE_SPEED = 5.0; //test this for perfect speed
 
-function corgiClass() {
+class Corgi {
+  constructor (){
   this.x = 75;
   this.y = 75;
   this.name = "LUKA";
@@ -16,14 +17,17 @@ function corgiClass() {
   this.controlKeyDown;
   this.controlKeyLeft;
 
-  this.setupInput = function (upKey, rightKey, downKey, leftKey) {
+  }
+
+
+  setupInput (upKey, rightKey, downKey, leftKey) {
     this.controlKeyUp = upKey;
     this.controlKeyRight = rightKey;
     this.controlKeyDown = downKey;
     this.controlKeyLeft = leftKey;
   };
 
-  this.reset = function (corgiName) {
+  reset (corgiName) {
     this.name = corgiName;
     this.keysHeld = 0;
     this.updateKeyReadout();
@@ -42,13 +46,13 @@ function corgiClass() {
     console.log("NO PLAYER START FOUND!");
   }; // end of corgiReset func
 
-  	this.updateSnackReadout = function () { // lets us know how many snacks are left
+  	updateSnackReadout () { // lets us know how many snacks are
       document.getElementById("debugText").innerHTML = "Keys: " + this.keysHeld;
     };
 
 
 
-  this.move = function () { //*test this as well - consistent speed is key with snack
+  move () { //*test this as well - consistent speed is key with snack
     var nextX = this.x;
     var nextY = this.y;
 
@@ -66,8 +70,9 @@ function corgiClass() {
     }
   }
 
+  game() {
   var walkIntoTileIndex = getTileIndexAtPixelCoord(nextX, nextY);
-		var walkIntoTileType = TILE_WALL;
+	var walkIntoTileType = TILE_WALL;
 
 		if(walkIntoTileIndex != undefined) {
 			walkIntoTileType = worldGrid[walkIntoTileIndex];
@@ -98,5 +103,8 @@ function corgiClass() {
       default:
         break;
     }
+  }
 }
+
+export default Corgi
 
